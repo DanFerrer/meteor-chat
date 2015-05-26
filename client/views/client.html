@@ -1,0 +1,29 @@
+<head>
+  <title>Meteor Chat app</title>
+  <style>
+    html {
+      padding: 10px;
+    }
+ 
+  .login-buttons-dropdown-align-right {
+    float: right;
+  }
+  </style>
+</head>
+
+<body>
+  {{> loginButtons align="left"}}
+  <p>Welcome!</p>
+  New Message:
+  <br>
+  <form class="new-message">
+    <input type="text" name="text" placeholder="New Message" id="message">
+  </form>
+  {{> messages }}
+</body>
+
+<template name="messages">
+  {{#each messages}}
+    <strong>{{name}}:</strong> {{message}}<br>
+  {{/each}}
+</template>
